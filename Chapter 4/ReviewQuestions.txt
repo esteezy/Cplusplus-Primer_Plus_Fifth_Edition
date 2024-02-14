@@ -1,0 +1,72 @@
+--------
+Review Questions
+--------
+
+1. How would you declare the following:
+	a. char actors [30];
+		//CORRECT
+	b. short betsie [100];
+		//CORRECT
+	c. float chuck [13];
+		//CORRECT
+	d. long double dipsea [64];
+		//CORRECT
+	
+2. int array [5] = {1,3,5,7,9}; 
+	//CORRECT
+
+3. int even = array[0] + array[4];
+	//CORRECT
+
+4. cout << ideas[1] << endl;
+	//CORRECT
+
+5. char array [13] = "cheeseburger";
+	//CORRECT - CAN ALSO USE: char lunch [] = "cheeseburger";
+
+6. 
+struct fish {
+	char kind [20];
+	int weight;
+	float length;
+	};
+	//CORRECT
+
+7. fish redDrum = {"Red Drum", 22, 24.20};
+	//CORRECT - CONSIDER LINE SPACING
+
+8. enum response {no, yes, maybe};
+	//PARTIALLY CORRECT -> enum Response {No, Yes, Maybe};
+
+9. 
+double * tedPtr = &ted;
+cout << *tedPtr;
+	//CORRECT
+
+10. 
+float * trePtr = &treacle;
+cout << trePtr[0] << " " << trePtr[9];
+	//PARTIALLY CORRECT
+		//float * trePtr = treacle; or float * trePtr = &treacle[0];
+
+11. 
+cout << "Enter an integer: ";
+int arrSize;
+cin >> arrSize;
+int * array = new int[arrSize];
+	//PARTIALLY CORRECT - INT MUST BE POSITIVE CONSIDER USING UNSIGNED INT
+
+12. Yes; returns address of stored string literal
+	//CORRECT - string constant, it evaluates as the address of the beginning of the string, cout interprets the address of a char as an invitation to print a string
+		//the typecast (int*) converts the address to type pointer to int, which is then printed as an address
+
+13. 
+fish * bass = new fish;
+std::strcpy(bass->kind, "Bass");
+	//INCORRECT 
+	// cout << "enter kind of fish";
+	//cin bass->kind
+
+14. cin will stop at the first white space in the input stream; if address is 123 Apple Ln, then address would equal "123" whereas cin.getline(address, 80) would read in the entire address up to the \n char
+	//CORRECT
+		//CIN SKIPS OVER WHITESPACE UNTIL IT FINDS NON_WHITESPACE, THEN CONTINUES UNTIL NEW WHITESPACE ENCOUNTERED.

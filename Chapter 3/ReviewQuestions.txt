@@ -1,0 +1,67 @@
+---------
+Review Questions
+---------
+1. Why does C++ have more than one integer type?
+	For optimization and faster run-time; different instructions can be used for different "widths" of integers to cutdown cycletimes for calculations
+PARTIALLY CORRECT - HAVING MORE THAN ONE INTEGER TYPE LETS YOU CHOOSE THE TYPE BEST SUITED TO A PARTICULAR NEED. FOR EXAMPLE, SHORT USED TO CONSERVE SPACE, LONG TO GUARANTEE STORAGE CAPACITY OR TO FIND THAT A PARTICULAR TYPE SPEEDS UP A PARTICULAR CALCULATION
+
+
+2. Declare variables matching the following descriptions:
+	a. A short integer with the value 80
+		short num = 80;
+CORRECT
+	b. an unsigned int integer with the value of 42,110
+		unsigned int num = 42110;
+CORRECT
+	c. an integer with the value 3,000,000,000
+		long num = 3000000000;
+PARTIALLY CORRECT: UNSIGNED LONG NUM = 3000000000;
+
+3. What safegaurds does C++ provide to keep you from exceeding the limits of an integer type
+	May have compiler warnings or overflow/underflow errors....but I don't think there's necessarilty anything stopping you from having expressions that over/underflow, may only occur during variable initalization based on variable type
+CORRECT: C++ PROVIDES NO AUTOMATIC SAFEGAURDS; CLIMITS FILE CAN BE USED TO DETERMINE WHAT LIMITS ARE
+
+
+4. What is the difference between 33L and 33?
+	L suffix is a type constant, meaning 33 is stored in however many bits long is designated to (i.e. 33 value stored in 32-bit memory as opposed to 16-bit int)
+	33 is int constant, meaning it will be stored in 16-bit memory address
+CORRECT
+
+5. Consider the two C++ statements below:
+	char grade = 65;
+	char grade = 'A';
+Are they equivalent?
+	In terms of what is physically stored at whatever address 'grade' points to, yes. both instances store '65' in binary at the address pointed to by grade
+INCORRECT: TWO STATEMENTS NOT REALLY EQUIVALENT, ALTHOUGH THEY HAVE THE SAME EFFECT ON SOME SYSTEMS. MOST IMPORTANTLY, THE FIRST STATEMENT ASSIGNS THE LETTER A TO GRADE ONLY ON A SYSTEM USING ASCII CODE, WHILE SECOND STATEMENT ALSO WORKS FOR OTHER CODE. SECOND, 65 IS A TYPE INT CONSTANT, WHERE A IS TYPE CHAR CONSTANT
+
+
+6. How could you use C++ to find out which character the code 88 represents? Come up with at least two ways.
+	cout << char(88);
+	cout << static_cast<char> (88);
+	cout.put(88);
+CORRECT: COUT << C; ALSO WORKS IF VARIABLE SET TO CHAR TYPE
+
+
+7. Assigning a long value to a float can result in a rounding error. What about assigning long to double?
+	Since long can not hold a value larger than double, this should be OK. Especially since long is an int type, caveat may include the number of permissible sig figs in double...?
+PARTIALLY CORRECT: DEPENDS ON HOW LARGE TWO TYPES ARE; IF LONG 4BYTES, THERE IS NO LOSS. DOUBLE PROVIDES AT LEAST 13 SIG FIGS, SO NO ROUNDING NEEDED
+
+
+8. Evaluate the following expressions as C++ would:
+	a. 8 * 9 + 2 => (8*9)+2 => 74
+CORRECT
+	b. 6 * 3 / 4 => same precedence, associativity (L2R) (6*3)/4 => 4.5 => ints => 4
+CORRECT
+	c. 3 / 4 * 6 => same precedence, assoc L2R (3/4)*6 => ints => 4
+INCORRECT SINCE 3/4 AS INT CONSTANTS WOULD EVALUATE TO 0; SO 3 / 4 * 6 == 0 * 6 == 0
+	d. 6.0 * 3 / 4 => same prec, assoc L2R (6.0 * 3)/4 => floating point => 4.5
+CORRECT
+	e. 15 % 4 => 3
+CORRECT
+
+
+9. Suppose x1 and x2 are two double vars that you want to add as integers and assign to an integer value
+	int y = x1 + x2;
+PARTIALLY CORRECT: INT Y = INT(X1) + INT(X2);
+	
+

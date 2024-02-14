@@ -1,0 +1,39 @@
+---------
+Review Questions
+---------
+1. What are the modules of C++ functions called? 
+	- Modules are functions; they are a block of source code, with a function header, definition, and prototype; sequential lines of instructions to perform some output.
+
+2. What does the following preprocessor directive do? 	#include <iostream> 
+	- Tells the compiler and linker that we are calling functions (objects) from another set of source code; so that at compile time those library specific objects can be pulled from the #include header files
+
+3. What does the following statement do? 
+	- allows us to tell the compiler that we are calling objects native to the standard library so that they do not have to be explicitly named each time they are called (e.g. std::cout >> cout) //PARTIALLY CORRECT: MAKES DEFINITIONS MADE IN THE STD NAMESPACE AVAILABLE TO THE PROGRAM
+
+4. What statement would you use to print the phrase  "Hello, world " and then start a new line? 
+	- std::cout <<  "Hello, world  n "; //CORRECT
+
+5. What statement would you use to create an integer variable with the name cheeses? 
+	- int cheeses; //CORRECT
+
+6. What statement would you use to assign the value 32 to the variable cheeses? 
+	- cheeses = 32;  
+	- int cheeses = 32; 
+	- int cheeses  {32 }; //CORRECT
+
+7. What statement would you use to read a value from keyboard input into the variable cheeses? 
+	- std::cin >> cheeses; //CORRECT
+
+8. What statement would you use to print  "We have X variety of cheese, " where the current value of the cheeses variable replaces X? 
+	- std::cout <<  "We have  " << cheeses <<  " variety of cheese  n "; //CORRECT
+
+9. What do the following function prototypes tell you about the functions? 
+	- int froop(double t); 
+		- froop returns an int; only takes one argument; one argument must be a double type //CORRECT
+	- void rattle(int n); 
+		- rattle returns no value; only takes one arg; one arg must be of type int //CORRECT
+	- int prune(void); 
+		- this may or may not be allowed; however likely goes against best practice if permissible; prune returns type int value //VOID ARGUMENT ALLOWED, PARTIALLY CORRECT
+
+10. When do you not have to use the keyword return when you define a function? 
+	- if the function header & prototype specifies function is of type void //CORRECT, MAKE NOTE YOU CAN STILL USE RETURN; IF NO VALUE RETURNED
